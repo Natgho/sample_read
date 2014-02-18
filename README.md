@@ -31,6 +31,7 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 +   bundlerインストール
 
 +   `/usr/unishared/icsdk/intcall.h`の以下3行をコメントアウトする  
+
         // extern  void *calloc();  
         // extern  void *malloc();  
         // extern  void *realloc();
@@ -48,13 +49,15 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
    `ictcall_header_path`を環境に合わせて更新する
 
 4. 以下のコマンドを実行して拡張ライブラリをコンパイルする  
+
         bundle install  
         rake compile
 
 
 テスト実行手順
 --------------
-1. `uni_objects/test/test_helper.rb`の以下4行を環境に合わせて更新する  
+1.  `uni_objects/test/test_helper.rb`の以下4行を環境に合わせて更新する  
+
         ENV['server'] = 'localhost'  
         ENV['userid'] = 'user'  
         ENV['passwd'] = 'passwd'  
