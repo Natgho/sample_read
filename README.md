@@ -17,7 +17,7 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
     ruby 2.0.0
 
 
-以下、UniVerseディレクトリ:`/usr/uv`として説明する
+以下、UniVerseディレクトリを`/usr/uv`として説明する
 
 
 事前準備
@@ -39,30 +39,31 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 インストール手順
 ----------------
 1. gemパッケージをインストールする  
-   `gem install uni_objects-0.0.1.gem`
+   `gem install uni_objects`
  
 2. インストール先へ移動する
-   `cd GEM PATHS/gems/uni_objects-0.0.1/`
+   `cd GEM PATHS/gems/uni_objects/`
  
-3. `ext/uni_objects/extconf.rb`のictcall_header_pathを環境に合わせて更新する
-   `ictcall_header_path = "/usr/uv/unishared.load/icsdk"`
+3. **uni_objects/ext/uni_objects/extconf.rb**の  
+   **ictcall_header_path**を環境に合わせて更新する
  
-4. 以下のコマンドを実行して拡張ライブラリをコンパイルする
+4. 以下のコマンドを実行して拡張ライブラリをコンパイルする  
     bundle install
     rake compile
 
 
 テスト実行手順
 --------------
-1. `test/test_helper.rb`の以下4行を環境に合わせて更新する
-    ENV['server'] = 'localhost'
-    ENV['userid'] = 'user'
-    ENV['passwd'] = 'passwd'
+1. **uni_objects/test/test_helper.rb**の以下4行を環境に合わせて更新する  
+    ENV['server'] = 'localhost'  
+    ENV['userid'] = 'user'  
+    ENV['passwd'] = 'passwd'  
     ENV['account'] = '/usr/uv/UVUSR/'
  
-2. `test/data/`のファイルを`ENV['account']`で指定したUVUSRアカウント配下のBPフォルダへコピーする
+2. **test/data/**のファイルを**ENV['account']**で指定した  
+   UVUSRアカウント配下のBPフォルダへコピーする
  
-3. `rake test`でテストを実行する
+3. `rake test`
 
 
 
