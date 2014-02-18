@@ -1,11 +1,63 @@
-プロジェクト・タイトル
+uni_objects
 ======================
-ここにプロジェクトの概要を書きます。
+Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？)
+
+動作環境
+--------
++   CentOS release 5.8 (Final)  
+    CentOS release 6.5 (Final)
+ 
++   4D DAM V10L1.4
+ 
++   gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-52)
+    
++   ruby 1.9.3
+    ruby 2.0.0
+ 
++   ■
+ 
++   ■
+ 
++   ■
+ 
++   ■
+ 
+ 
+事前準備
+--------
++   UniVerseインストール
++   4D DAMインストール
++   UVSYS,UVUSRの配置
++   NLSの設定
++   RubyGemsインストール
++   
++   
+ 
+_UniVerseインストール先が`/usr/uv`の場合_
+ 
++   `/usr/unishared/icsdk/intcall.h`の以下3行をコメントアウトする
+    // extern  void *calloc();
+    // extern  void *malloc();
+    // extern  void *realloc();
+ 
++   ■
+ 
+    ■
+    ■
+    ■
+    ■
+ 
+ 
+ 
+ 
+ 
+ 
+------
 行末にスペースを2つ入れると
 改行されます。
  
 段落を分けるには、[空行](http://example.com/) を入れます。
- 
+
 使い方
 ------
 ### インライン ###
