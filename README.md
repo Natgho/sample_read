@@ -2,6 +2,8 @@ uni_objects
 ======================
 Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？)
 
+
+
 動作環境
 --------
 +   CentOS release 5.8 (Final)  
@@ -10,19 +12,14 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 +   4D DAM V10L1.4
  
 +   gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-52)
-    
-+   ruby 1.9.3
+ 
++   ruby 1.9.3  
     ruby 2.0.0
- 
-+   ■
- 
-+   ■
- 
-+   ■
- 
-+   ■
- 
- 
+
+
+以下、UniVerseディレクトリ:`/usr/uv`として説明する
+
+
 事前準備
 --------
 +   UniVerseインストール
@@ -30,28 +27,48 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 +   UVSYS,UVUSRの配置
 +   NLSの設定
 +   RubyGemsインストール
-+   
-+   
++   rubyインストール
++   bundlerインストール
  
-_UniVerseインストール先が`/usr/uv`の場合_
- 
-+   `/usr/unishared/icsdk/intcall.h`の以下3行をコメントアウトする
-    // extern  void *calloc();
-    // extern  void *malloc();
++   `/usr/unishared/icsdk/intcall.h`の以下3行をコメントアウトする  
+    // extern  void *calloc();  
+    // extern  void *malloc();  
     // extern  void *realloc();
+
+
+インストール手順
+----------------
+1. gemパッケージをインストールする  
+   `gem install uni_objects-0.0.1.gem`
  
-+   ■
+2. インストール先へ移動する
+   `cd GEM PATHS/gems/uni_objects-0.0.1/`
  
-    ■
-    ■
-    ■
-    ■
+3. `ext/uni_objects/extconf.rb`のictcall_header_pathを環境に合わせて更新する
+   `ictcall_header_path = "/usr/uv/unishared.load/icsdk"`
  
+4. 以下のコマンドを実行して拡張ライブラリをコンパイルする
+    bundle install
+    rake compile
+
+
+テスト実行手順
+--------------
+1. `test/test_helper.rb`の以下4行を環境に合わせて更新する
+    ENV['server'] = 'localhost'
+    ENV['userid'] = 'user'
+    ENV['passwd'] = 'passwd'
+    ENV['account'] = '/usr/uv/UVUSR/'
  
+2. `test/data/`のファイルを`ENV['account']`で指定したUVUSRアカウント配下のBPフォルダへコピーする
  
- 
- 
- 
+3. `rake test`でテストを実行する
+
+
+
+
+
+
 ------
 行末にスペースを2つ入れると
 改行されます。
