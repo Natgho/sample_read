@@ -8,11 +8,11 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 --------
 +   CentOS release 5.8 (Final)  
     CentOS release 6.5 (Final)
- 
+
 +   4D DAM V10L1.4
- 
+
 +   gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-52)
- 
+
 +   ruby 1.9.3  
     ruby 2.0.0
 
@@ -29,8 +29,9 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 +   RubyGemsインストール
 +   rubyインストール
 +   bundlerインストール
- 
+
 +   `/usr/unishared/icsdk/intcall.h`の以下3行をコメントアウトする  
+
     // extern  void *calloc();  
     // extern  void *malloc();  
     // extern  void *realloc();
@@ -40,27 +41,29 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 ----------------
 1. gemパッケージをインストールする  
    `gem install uni_objects`
- 
-2. インストール先へ移動する
+
+2. インストール先へ移動する  
    `cd GEM PATHS/gems/uni_objects/`
- 
-3. **uni_objects/ext/uni_objects/extconf.rb**の  
-   **ictcall_header_path**を環境に合わせて更新する
- 
+
+3. `uni_objects/ext/uni_objects/extconf.rb`の
+   `ictcall_header_path`を環境に合わせて更新する
+
 4. 以下のコマンドを実行して拡張ライブラリをコンパイルする  
-    bundle install
+
+    bundle install  
     rake compile
 
 
 テスト実行手順
 --------------
-1. **uni_objects/test/test_helper.rb**の以下4行を環境に合わせて更新する  
+1. `uni_objects/test/test_helper.rb`の以下4行を環境に合わせて更新する  
+
     ENV['server'] = 'localhost'  
     ENV['userid'] = 'user'  
     ENV['passwd'] = 'passwd'  
     ENV['account'] = '/usr/uv/UVUSR/'
  
-2. **test/data/**のファイルを**ENV['account']**で指定した  
+2. `test/data/`のファイルを`ENV['account']`で指定した
    UVUSRアカウント配下のBPフォルダへコピーする
  
 3. `rake test`
