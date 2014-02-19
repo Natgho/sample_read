@@ -86,8 +86,8 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 3. `uni_objects/sample/cataloghouse`に移動し、`rails server`を起動する
 
 
-webアプリAPIテスト実行手順 (削除するかも)
------------------------------------------
+webアプリAPIテスト実行手順
+--------------------------
 1. サンプルアプリフォルダへ移動する
    `cd uni_objects/sample/cataloghouse/`
 
