@@ -11,7 +11,8 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 
 +   4D DAM V10L1.4
 
-+   gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-52)
++   gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-52)  
+    gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-4) ※warning
 
 +   ruby 1.9.3  
     ruby 2.0.0
@@ -56,40 +57,56 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 
 テスト実行手順
 --------------
-1.  `uni_objects/test/test_helper.rb`の以下4行を環境に合わせて更新する  
+1. `uni_objects/test/test_helper.rb`の以下4行を環境に合わせて更新する  
 
         ENV['server'] = 'localhost'  
         ENV['userid'] = 'user'  
         ENV['passwd'] = 'passwd'  
         ENV['account'] = '/usr/uv/UVUSR/'
 
-2. `test/data/`のファイルを`ENV['account']`で指定した
+2. `uni_objects/lib/uni_objects/uni_verse.rb`の以下4行を環境に合わせて更新する
+
+        @@server = 'localhost'
+        @@user = 'user'
+        @@password = 'passwd'
+        @@account = '/usr/uv/UVUSR'
+
+3. `test/data/`のファイルを`ENV['account']`で指定した
    UVUSRアカウント配下のBPフォルダへコピーする
+
+4. `rake test`
+
+
+サンプルアプリ実行手順
+----------------------
+1. `uni_objects/sample/create_sample_data.rb`の接続情報を環境に合わせて更新する
+
+2. create_sample_data.rbを実行する
+
+3. `uni_objects/sample/cataloghouse`に移動し、`rails server`を起動する
+
+
+
+
+
+
+webアプリAPIテスト実行手順 (削除するかも)
+-----------------------------------------
+1. サンプルアプリフォルダへ移動する
+   `cd uni_objects/sample/cataloghouse/`
+
+2. `cataloghouse/test/unit/helper/test_helper.rb`の以下4行を環境に合わせて更新する  
+
+        ENV['server'] = 'localhost'  
+        ENV['userid'] = 'user'  
+        ENV['passwd'] = 'passwd'  
+        ENV['account'] = '/usr/uv/UVUSR/'
 
 3. `rake test`
 
 
-
-
-
-
 ------
-行末にスペースを2つ入れると
-改行されます。
- 
-段落を分けるには、[空行](http://example.com/) を入れます。
 
-使い方
-------
-### インライン ###
-インラインのコードは、**バッククォート** (`` ` ``) で囲みます。
- 
-### ブロックレベル ###
-    function f () {
-        alert(0);  /* 先頭に4文字のスペース、
-                      もしくはタブを挿入します */
-    }
- 
 パラメータの解説
 ----------------
 リストの間に空行を挟むと、それぞれのリストに `<p>` タグが挿入され、行間が
