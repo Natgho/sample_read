@@ -91,11 +91,10 @@ webアプリAPIテスト実行手順
 
 3. `rake test`
 
-*上記でエラーが発生する場合*
+**エラーが発生する場合**  
 UniVerse Shellで`LIST VOC "USERS"`を実行し、下記のデータが存在するが確認する  
 存在する場合は削除する
 
-    LIST VOC "USERS" 15:13:20  14-02-20  PAGE    1
     NAME..........    TYPE    DESC..........................
     
     USERS             K       Keyword - Display STATUS
