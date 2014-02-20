@@ -54,6 +54,13 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
         bundle install  
         rake compile
 
+5. `uni_objects/lib/uni_objects/uni_verse.rb`の以下4行を環境に合わせて更新する
+
+        @@server = 'localhost'
+        @@user = 'user'
+        @@password = 'passwd'
+        @@account = '/usr/uv/UVUSR'
+
 
 テスト実行手順
 --------------
@@ -64,26 +71,10 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
         ENV['passwd'] = 'passwd'  
         ENV['account'] = '/usr/uv/UVUSR/'
 
-2. `uni_objects/lib/uni_objects/uni_verse.rb`の以下4行を環境に合わせて更新する
-
-        @@server = 'localhost'
-        @@user = 'user'
-        @@password = 'passwd'
-        @@account = '/usr/uv/UVUSR'
-
-3. `test/data/`のファイルを`ENV['account']`で指定した
+2. `test/data/`のファイルを`ENV['account']`で指定した
    UVUSRアカウント配下のBPフォルダへコピーする
 
-4. `rake test`
-
-
-サンプルアプリ実行手順
-----------------------
-1. `uni_objects/sample/create_sample_data.rb`の接続情報を環境に合わせて更新する
-
-2. create_sample_data.rbを実行する
-
-3. `uni_objects/sample/cataloghouse`に移動し、`rails server`を起動する
+3. `rake test`
 
 
 webアプリAPIテスト実行手順
@@ -100,4 +91,23 @@ webアプリAPIテスト実行手順
 
 3. `rake test`
 
+*上記でエラーが発生する場合*
+UniVerse Shellで`LIST VOC "USERS"`を実行し、下記のデータが存在するが確認する  
+存在する場合は削除する
+
+    LIST VOC "USERS" 15:13:20  14-02-20  PAGE    1
+    NAME..........    TYPE    DESC..........................
+    
+    USERS             K       Keyword - Display STATUS
+                              information about the USERS
+                              logged into the system
+
+
+サンプルアプリ実行手順
+----------------------
+1. `uni_objects/sample/create_sample_data.rb`の接続情報を環境に合わせて更新する
+
+2. create_sample_data.rbを実行する
+
+3. `uni_objects/sample/cataloghouse`に移動し、`rails server`を起動する
 
