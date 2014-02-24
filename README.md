@@ -82,17 +82,10 @@ webアプリAPIテスト実行手順
 1. サンプルアプリフォルダへ移動する
    `cd uni_objects/sample/cataloghouse/`
 
-2. `cataloghouse/test/unit/helper/test_helper.rb`の以下4行を環境に合わせて更新する  
-
-        ENV['server'] = 'localhost'  
-        ENV['userid'] = 'user'  
-        ENV['passwd'] = 'passwd'  
-        ENV['account'] = '/usr/uv/UVUSR/'
-
-3. `rake test`
+2. `rake test`
 
 **エラーが発生する場合**  
-UniVerse Shellで`LIST VOC "USERS"`を実行し、下記のデータが存在するが確認する  
+UniVerse Shellで`LIST VOC "USERS"`を実行し、下記のデータが存在するか確認する  
 存在する場合は削除する
 
     NAME..........    TYPE    DESC..........................
