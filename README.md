@@ -107,7 +107,7 @@ UniVerse Shellで`LIST VOC "USERS"`を実行し、下記のデータが存在す
 ----------------------
 1. `uni_objects/sample/create_sample_data.rb`の接続情報を環境に合わせて更新する
 
-2. create_sample_data.rbを実行する
+2. `uni_objects/sample`に移動し、`create_sample_data.rb`を実行する
 
 3. `uni_objects/sample/cataloghouse`に移動し、`rails server`を起動する
 
