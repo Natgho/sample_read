@@ -82,10 +82,7 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
         ENV['passwd'] = 'passwd'  
         ENV['account'] = '/usr/uv/UVUSR/'
 
-2. `test/data/`のファイルを`ENV['account']`で指定した
-   UVUSRアカウント配下のBPフォルダへコピーする ←削除する！
-
-3. `rake test`
+2. `rake test`
 
 
 webアプリAPIテスト実行手順
