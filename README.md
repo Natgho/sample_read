@@ -40,8 +40,19 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
 
 インストール手順
 ----------------
+1. ソースを取得する
+   `git clone git://github.com/～/uni_objects.git`
+
+2. gemを作成する
+
+        cd uni_objects
+        git init
+        git add .
+        git commit -m "Init commit"
+        rake build
+
 1. gemパッケージをインストールする  
-   `gem install uni_objects`
+   `gem install pkg/uni_objects-(version).gem`
 
 2. インストール先へ移動する  
    `cd GEM PATHS/gems/uni_objects/`
@@ -72,7 +83,7 @@ Rubyから4D DAMを利用するためのAPI(4D DAM→AI DAMに書き換える？
         ENV['account'] = '/usr/uv/UVUSR/'
 
 2. `test/data/`のファイルを`ENV['account']`で指定した
-   UVUSRアカウント配下のBPフォルダへコピーする
+   UVUSRアカウント配下のBPフォルダへコピーする ←削除する！
 
 3. `rake test`
 
